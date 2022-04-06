@@ -5,9 +5,8 @@ const Settings: LayoutSettings & {
   logo?: string;
 } = {
   navTheme: 'light',
-  // 拂晓蓝
   primaryColor: '#1890ff',
-  layout: 'mix',
+  layout: 'top',
   contentWidth: 'Fluid',
   fixedHeader: false,
   fixSiderbar: true,
@@ -16,6 +15,10 @@ const Settings: LayoutSettings & {
   pwa: false,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   iconfontUrl: '',
+  footerRender: false,
+  menuRender: false,
+  // menuHeaderRender: false,
+  headerRender: false,
 };
 
 export default Settings;
