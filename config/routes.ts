@@ -25,28 +25,16 @@
     component: './Welcome',
   },
   {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        icon: 'smile',
-        component: './Welcome',
-      },
-      {
-        component: './404',
-      },
-    ],
+    name: 'tool.online-align',
+    icon: 'table',
+    paht: '/OnlineAlign',
+    component: './OnlineAlign',
   },
   {
-    name: 'list.table-list',
+    name: 'tool.star-rating',
     icon: 'table',
-    path: '/list',
-    component: './TableList',
+    path: '/StarRating',
+    component: './StarRating',
   },
   {
     path: '/',

@@ -1,0 +1,16 @@
+.root-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.lanSelect-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fileUpload-box {
+  display: flex;
+  flex-direction: row;
+}

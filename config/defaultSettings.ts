@@ -14,7 +14,6 @@ const Settings: LayoutSettings & {
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   headerHeight: 48,
   splitMenus: false,
-  headerRender: false,
   footerRender: false,
   menuRender: false,
   menuHeaderRender: false,

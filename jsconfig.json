@@ -5,6 +5,7 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
+      // @ 符号根路径配置
       "@/*": ["./src/*"]
     }
   }

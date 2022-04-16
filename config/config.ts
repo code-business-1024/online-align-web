@@ -14,6 +14,7 @@ export default defineConfig({
   dva: {
     hmr: true,
   },
+  // 布局配置
   layout: {
     // https://umijs.org/zh-CN/plugins/plugin-layout
     locale: true,
@@ -21,6 +22,7 @@ export default defineConfig({
     ...defaultSettings,
   },
   // https://umijs.org/zh-CN/plugins/plugin-locale
+  // 国际化配置
   locale: {
     // default zh-CN
     default: 'zh-CN',

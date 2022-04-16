@@ -1,5 +1,5 @@
 export default {
-  'menu.welcome': '欢迎',
+  'menu.welcome': '在线对齐',
   'menu.more-blocks': '更多区块',
   'menu.home': '首页',
   'menu.admin': '管理页',
@@ -22,6 +22,8 @@ export default {
   'menu.form.step-form.result': '分步表单（完成）',
   'menu.form.advanced-form': '高级表单',
   'menu.list': '列表页',
+  'menu.tool.online-align': '在线对齐',
+  'menu.tool.star-rating': '星级评分',
   'menu.list.table-list': '查询表格',
   'menu.list.basic-list': '标准列表',
   'menu.list.card-list': '卡片列表',
