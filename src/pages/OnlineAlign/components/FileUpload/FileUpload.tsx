@@ -6,20 +6,10 @@ import { useEffect, useState } from 'react';
 
 const { Option } = Select;
 
-let langSelectList = [
+const langSelectList = [
   { baseLang: 'zh_CN', desc: '中文' },
   { baseLang: 'en_US', desc: '英文' },
 ];
-
-const initLangDictList = async () => {
-  console.log('查询语言字典');
-  const res = await getDictList({
-    dictName: 'UnityLang',
-    fields: ['baseLang', 'desc'],
-  });
-  langSelectList = res.data;
-  return langSelectList;
-};
 
 const FileUpload: React.FC = ({ doUploadSuccess = (f) => f }) => {
   // const doUploadSuccess = props;
@@ -27,7 +17,34 @@ const FileUpload: React.FC = ({ doUploadSuccess = (f) => f }) => {
   // useEffect(() => {
   //   console.log(sentences);
   // }, [sentences]);
-  const [] = useState(initLangDictList);
+  // const [] = useState(initLangDictList);
+  const [langDictList, setLangDictList] = useState(langSelectList);
+  // [] 空数组意味着只有首次渲染会调用
+  // useEffect 的第一个参数是函数 不是一个 promise
+  // useEffect(async () => {
+  //   const res = await getDictList({
+  //     dictName: 'UnityLang',
+  //     fields: ['baseLang', 'desc'],
+  //   });
+  //   setLangDictList(res.data);
+  // }, []);
+  useEffect(() => {
+    // const getLangDictList = async () => {
+    //   const res = await getDictList({
+    //     dictName: 'UnityLang',
+    //     fields: ['baseLang', 'desc'],
+    //   });
+    //   setLangDictList(res.data);
+    // };
+    // getLangDictList();
+    (async () => {
+      const res = await getDictList({
+        dictName: 'UnityLang',
+        fields: ['baseLang', 'desc'],
+      });
+      setLangDictList(res.data);
+    })();
+  }, []);
   const [currentLang, setCurrentLang] = useState('auto');
   const [fileName, setFileName] = useState('');
   return (
@@ -42,7 +59,7 @@ const FileUpload: React.FC = ({ doUploadSuccess = (f) => f }) => {
               setCurrentLang(value);
             }}
           >
-            {langSelectList.map((item: any) => (
+            {langDictList.map((item: any) => (
               <Option key={item.baseLang} value={item.baseLang}>
                 {item.desc}
               </Option>

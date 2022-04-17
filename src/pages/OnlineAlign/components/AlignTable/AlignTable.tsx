@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import type { ProColumns } from '@ant-design/pro-table';
 import ProTable, { TableDropdown } from '@ant-design/pro-table';
 import FileUpload from '../FileUpload/FileUpload';
@@ -59,40 +59,43 @@ const columns: ProColumns<TableListItem>[] = [
   },
   {
     title: '内容',
-    width: 400,
+    width: 600,
     dataIndex: 'value',
     render: (_) => <a>{_}</a>,
   },
-  {
-    title: '操作',
-    width: 180,
-    key: 'option',
-    valueType: 'option',
-    render: (record) => [
-      <a
-        key="editable"
-        onClick={() => {
-          console.log(record);
-        }}
-      >
-        编辑
-      </a>,
-      <a key="link2">报警</a>,
-      <a key="link3">监控</a>,
-      <TableDropdown
-        key="actionGroup"
-        menus={[
-          { key: 'copy', name: '复制' },
-          { key: 'delete', name: '删除' },
-        ]}
-      />,
-    ],
-  },
+  // {
+  //   title: '操作',
+  //   width: 180,
+  //   key: 'option',
+  //   valueType: 'option',
+  //   render: (record) => [
+  //     // <a
+  //     //   key="editable"
+  //     //   onClick={() => {
+  //     //     console.log(record);
+  //     //   }}
+  //     // >
+  //     //   编辑
+  //     // </a>,
+  //     // <a key="link2">报警</a>,
+  //     // <a key="link3">监控</a>,
+  //     <TableDropdown
+  //       key="actionGroup"
+  //       menus={[
+  //         { key: 'copy', name: '复制' },
+  //         { key: 'delete', name: '删除' },
+  //       ]}
+  //     />,
+  //   ],
+  // },
 ];
 
 const AlignTable: React.FC = () => {
   // const [loading, setLoading] = useState(true);
   const [sentences, setSentences] = useState(tableListDataSource);
+  useEffect(() => {
+    localStorage.setItem('text', JSON.stringify(sentences));
+  }, [sentences]);
   return (
     <>
       {/* <p onClick={() => setSentences([])}>Clear</p> */}
